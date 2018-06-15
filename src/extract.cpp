@@ -33,7 +33,7 @@ bool OpenVorbisBGM(FXFile& File, OggVorbis_File& VF, GameInfo* GI, TrackInfo* TI
 	if(!GI->OpenBGMFile(File, TI))	return false;
 
 	if(ov_open_callbacks(&File, &VF, NULL, 0, OV_CALLBACKS_FXFILE))	return false;
-	ov_pcm_seek(&VF, TI->GetStart(FMT_SAMPLE, SilRem));
+	ov_pcm_seek(&VF, TI->GetStart(FMT_SAMPLE, SilResolve()));
 	return true;
 }
 
@@ -156,10 +156,10 @@ Extract_Vals::Extract_Vals(TrackInfo* TI, const bool& Fmt)
 
 void Extract_Vals::Init(TrackInfo* TI, const bool& Fmt)
 {
-	TI->GetPos(Fmt, SilRem, &ts_ext, &tl, &te);
+	TI->GetPos(Fmt, SilResolve(), &ts_ext, &tl, &te);
 	TI->GetPos(Fmt, false, &ts_data);
 
-	Len = TI->GetByteLength(SilRem, LoopCnt, FadeDur);
+	Len = TI->GetByteLength(SilResolve(), LoopCnt, FadeDur);
 
 	FadeBytes = (ulong)(fabs(FadeDur) * TI->Freq * 4.0f);
 	
@@ -248,7 +248,7 @@ bool Extractor::PrepareInput(TrackInfo* TI, GameInfo* GI, Extract_Vals& V)
 		{
 			if(!OpenVorbisBGM(V.In, VF, GI, TI))	return false;
 		}
-		Size = TI->GetByteLength(SilRem, 1, 0);
+		Size = TI->GetByteLength(SilResolve(), 1, 0);
 		V.d = 0;
 
 		V.Out.open(DecodeFile, FXIO::Writing);

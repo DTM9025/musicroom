@@ -148,7 +148,7 @@ bool Streamer::SwitchTrack_WAV(TrackInfo* NewTrack, FXString& NewFN)
 
 		if(!ActiveGame->OpenBGMFile(CurFile, NewTrack))	return false;
 	}
-	Pos = NewTrack->GetStart(FMT_BYTE, SilRem);
+	Pos = NewTrack->GetStart(FMT_BYTE, SilResolve());
 	CurFile.position(Pos);
 
 	SB->SetFrequency(NewTrack->Freq);
@@ -171,7 +171,7 @@ bool Streamer::SwitchTrack_OGG(TrackInfo* NewTrack, FXString& NewFN)
 	}
 	else if(Track && CurFNHash == NewFNHash)
 	{
-		ov_pcm_seek(&SF, NewTrack->GetStart(FMT_SAMPLE, SilRem));
+		ov_pcm_seek(&SF, NewTrack->GetStart(FMT_SAMPLE, SilResolve()));
 	}
 	else
 	{
@@ -327,7 +327,7 @@ ulong StreamerFront::Pos()
 
 	ulong Ret = Str.Pos;
 	if(ActiveGame->Vorbis)	Ret <<= 2;
-	if(Str.Track->FS == 0)	Ret -= Str.Track->GetStart(FMT_BYTE, SilRem);
+	if(Str.Track->FS == 0)	Ret -= Str.Track->GetStart(FMT_BYTE, SilResolve());
 	return Ret;
 }
 // ---------

@@ -243,6 +243,7 @@ MainWnd::MainWnd(FXApp* App, FXIcon* Ico)
 		AlgBox->setNumVisible(Ext.FAs.Size());
 
 		RemoveSilence = new FXCheckButton(ParamBox, "Remove opening silence", this, MW_UPDATE_LENGTHS, CHECKBUTTON_NORMAL);
+		RemEnabled = RemoveSilence->isEnabled();
 
 	StartFrame = new FXVerticalFrame(OutRightFrame, LAYOUT_FILL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 		StartAll = new FXButton(StartFrame, "Extract all", NULL, this, MW_EXTRACT_ALL, BUTTON_NORMAL | LAYOUT_FILL);
@@ -279,7 +280,7 @@ void MainWnd::create()
 
 	StreamerFront::Inst().Init(id());
 
-	RemoveSilence->handle(this, FXSEL(SEL_COMMAND, SilRem ? ID_CHECK : ID_UNCHECK), (void*)SilRem);
+	RemoveSilence->handle(this, FXSEL(SEL_COMMAND, SilResolve() ? ID_CHECK : ID_UNCHECK), (void*)SilResolve());
 	TrackPlay->handle(this, FXSEL(SEL_COMMAND, Play ? ID_CHECK : ID_UNCHECK), (void*)Play);
 	handle(this, FXSEL(SEL_COMMAND, MW_TOGGLE_PLAY), (void*)Play);
 
@@ -416,6 +417,7 @@ void MainWnd::LoadGame(GameInfo* GI)
 		Comment->setText("");
 		GameDir->Field->setText("");
 		RemoveSilence->enable();
+		RemEnabled = RemoveSilence->isEnabled();
 		handle(this, FXSEL(SEL_COMMAND, MW_CHANGE_ACTION_STATE), false);
 		TrackView->fitColumnsToContents(0, TrackView->getNumColumns());
 	}
@@ -454,6 +456,7 @@ void MainWnd::LoadGame(GameInfo* GI)
 
 		if((GI->CryptKind && GI->Vorbis) || !GI->SilenceScan)	RemoveSilence->disable();
 		else	RemoveSilence->enable();
+		RemEnabled = RemoveSilence->isEnabled();
 
 		Str.RequestTrackSwitch(CurTrack);
 		if(Play)	Str.Play();
@@ -663,7 +666,7 @@ long MainWnd::onCmdLengths(FXObject* Sender, FXSelector Message, void* ptr)
 			continue;
 		}
 
-		Len = TI->GetByteLength(SilRem, LoopCnt, FadeDur);
+		Len = TI->GetByteLength(SilResolve(), LoopCnt, FadeDur);
 
 		TrackView->setItemText(Row, 2, TI->LengthString(Len));
 
@@ -733,7 +736,7 @@ long MainWnd::onPlayStat(FXObject* Sender, FXSelector Message, void* ptr)
 	TrackInfo* TI = Str.CurTrack();
 	if(Play && ActiveGame && TI)
 	{
-		Len = TI->GetByteLength(SilRem, 1, 0);
+		Len = TI->GetByteLength(SilResolve(), 1, 0);
 		Cur = Str.Pos();
 
 		Stat.format("Playing: %s %s  //  %s, %.0f Hz  //  %s / %s", TI->GetNumber(), TI->Name[Lang], ActiveGame->Vorbis ? "Vorbis" : "PCM", TI->Freq, TI->LengthString(Cur), TI->LengthString(Len));

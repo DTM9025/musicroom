@@ -211,14 +211,14 @@ bool Encoder_Vorbis::Extract(TrackInfo* TI, FXString& EncFN, GameInfo* GI, Extra
 				if(VF.links == 1)	CSA = false;
 
 				// This is necessary because seeking to 0 apparently breaks the codebooks
-				Start = TI->GetStart(FMT_SAMPLE, CSA ? 0 : SilRem);
+				Start = TI->GetStart(FMT_SAMPLE, CSA ? 0 : SilResolve());
 				if(!(CSA && !Start) )	ov_pcm_seek(&VF, Start);
 			}
 			else	CSA = false;
 		}
 		else
 		{
-			V.In.position(TI->GetStart(FMT_BYTE, SilRem));
+			V.In.position(TI->GetStart(FMT_BYTE, SilResolve()));
 		}
 	}
 
@@ -285,14 +285,14 @@ bool Encoder_Vorbis::Extract(TrackInfo* TI, FXString& EncFN, GameInfo* GI, Extra
 
 		StreamLen = ov_pcm_total(&VF, Link);
 
-		EncLen = TI->GetByteLength(SilRem, LoopCnt, FadeDur);
+		EncLen = TI->GetByteLength(SilResolve(), LoopCnt, FadeDur);
 	}
 	else
 	{
 		BGMLib::UI_Stat_Safe("intro...");
 		vorbis_write_headers(V.Out, &ES.stream_out, &ES.vi, &TF->vc);
 
-		EncLen = TI->GetByteLength(SilRem, 1, fabs(FadeDur));
+		EncLen = TI->GetByteLength(SilResolve(), 1, fabs(FadeDur));
 		if(V.FadeStart < EncLen)	EncLen = V.FadeStart + V.FadeBytes;
 
 		StreamLen = V.tl - ( (TI->FS != 0) ? 0 : V.ts_data);

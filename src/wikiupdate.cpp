@@ -2,7 +2,7 @@
 // --------------------
 // wikiupdate.cpp - Touhou Wiki Track Info Updating
 // --------------------
-// "©" Nmlgc, 2010-2011
+// "Â©" Nmlgc, 2010-2011
 
 #include <bgmlib/platform.h>
 
@@ -160,13 +160,11 @@ FXuint AskForUpdate(TrackInfo* TI, const FXString& Type, FXString* Old, FXString
 {
 	if(New->empty() || *Ret == UPDATE_NOALL) return *Ret;
 
-	// Remove line breaks for comparison
+	// Normalize new-lines.
 	FXString o = *Old, n = *New;
-	o.simplify();
-	n.simplify();
-	removeSub(o, ' ');
-	removeSub(n, ' ');
-	if(o == n)	return *Ret;
+	o.substitute("\r\n", "\n");
+	n.substitute("\r\n", "\n");
+	if(o == n) return *Ret;
 
 	FXString Msg;
 	if(*Ret != UPDATE_YESALL && !Old->empty())
@@ -225,6 +223,12 @@ static TrackInfo* Eval_MusicRoom(GameInfo* GI, FXString& WD, FXuint* MsgRet)
 		SrcVal.format("%s%d", Wiki_Comment[LANG_JP], s);	
 		SrcVal = TemplateElm_Comment(WD, SrcVal);
 
+		// Because some comments skip the first number.
+		if(SrcVal.empty() && s == 1)
+		{
+			s++;
+			continue;
+		}
 		if(SrcVal.empty())	break;
 		NC = &Afterword.Add()->Data;
 
@@ -451,7 +455,21 @@ DL:
 	Page.substitute("&gt;", ">");
 	Page.substitute("&lt;", "<");
 
+	// Remove other references
+	{
+		FXRex regexp_ref;
+		if(!regexp_ref.parse("<ref>.*?</ref>", regexp_mode))
+		{
+			while (regexp_ref.match(Page, &s, &t, FXRex::Forward, 1, s))
+			{
+				Page.erase(s, t-s);
+			}
+		}
+	}
+
 	// Too less time for a proper fix right now
+	// TODO: Investigate linebreak behavior in Touhou Wiki
+	Page.substitute("<br />\n", "\n"); // Hopefully this renders stuff correctly.
 	Page.substitute("<br />", "\n");
 
 	// Magical Astronomy...

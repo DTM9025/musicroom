@@ -32,6 +32,8 @@ MainWnd* MWBack;	// Back end GUI class
 bool Play;	// Play selected track?
 ushort FadeAlgID = 0;	// Fade algorithm
 bool SilRem = true;	// Remove opening silence?
+bool RemEnabled = true;
+bool SilResolve() { return SilRem && RemEnabled; }
 int Volume = 100;
 // ---
 
@@ -63,7 +65,7 @@ FXString OutPath;	// Output directory
 // String Constants
       FXString PrgName = "Music Room Interface";
 	  FXString WebPage = "http://bit.ly/musicroom_interface";
-const FXString PrgVer = "v2.2";
+const FXString PrgVer = "v2.2.5";
 const FXString NoGame = "(no game loaded)";
       FXString CfgFile = "musicroom.cfg";
 	  FXString LGDFile = "gamedirs.cfg";

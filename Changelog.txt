@@ -7,6 +7,20 @@ Changelog
 NOTE: This file only lists changes to the user interface program.
       Refer to the bgmlib changelog for changes to supported games and the back-end engine.
 
+- 2017/06/04 (Version 2.2.4)
+* Fix bug with Tasofro extraction not ignoring the Remove Opening Silence option.
+
+----
+
+- 2017/06/03 (Version 2.2.3)
+* Fix parsing of references, now removing them as intended.
+
+----
+
+- 2017/05/29 (Version 2.2.2)
+* Updated curl to fix automatic track name and comment translation downloading from Touhou Wiki
+
+----
 
 - 2011/05/14 (Version 2.2)
 * Added an appropriate warning for custom encoders when dealing with lossy music

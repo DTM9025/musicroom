@@ -1,6 +1,6 @@
 // Music Room Interface
 // --------------------
-// "©" Nmlgc, 2010-2011
+// "Â©" Nmlgc, 2010-2011
 
 #ifndef MUSICROOM_MUSICROOM_H
 #define MUSICROOM_MUSICROOM_H
@@ -85,8 +85,10 @@ extern MainWndFront* MW;
 extern bool Play;	// Play selected track?
 extern ushort FadeAlgID;	// Fade algorithm
 extern bool SilRem;	// Remove opening silence?
+extern bool RemEnabled; // Remove Silience Button enabled?
 extern int Volume;
 extern FXFont*	Monospace;
+extern bool SilResolve();
 // ---
 
 // Game
