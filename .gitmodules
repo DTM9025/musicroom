@@ -7,4 +7,4 @@
 	url = https://github.com/nmlgc/bgmlib
 [submodule "libs/th_tool_shared"]
 	path = libs/th_tool_shared
-	url = https://github.com/nmlgc/th_tool_shared
+	url = https://github.com/DTM9025/th_tool_shared
