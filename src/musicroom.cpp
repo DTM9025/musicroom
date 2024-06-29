@@ -64,8 +64,8 @@ FXString OutPath;	// Output directory
 
 // String Constants
       FXString PrgName = "Music Room Interface";
-	  FXString WebPage = "http://bit.ly/musicroom_interface";
-const FXString PrgVer = "v2.2.5";
+	  FXString WebPage = "https://github.com/DTM9025/musicroom";
+const FXString PrgVer = "v2.2.9";
 const FXString NoGame = "(no game loaded)";
       FXString CfgFile = "musicroom.cfg";
 	  FXString LGDFile = "gamedirs.cfg";

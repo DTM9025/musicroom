@@ -7,6 +7,32 @@ Changelog
 NOTE: This file only lists changes to the user interface program.
       Refer to the bgmlib changelog for changes to supported games and the back-end engine.
 
+- 2024/06/28 (Version 2.2.9)
+* Corrected wiki page retrieval that became broken due to changes in the <text> element of the Export.
+* Added BGM files for TH18, TH18.5, TH19, MCD9.5, and MCD10
+
+----
+
+- 2020/06/22 (Version 2.2.8)
+* Wrong names for tracks in Touhou 16.5 BGM file was fixed
+
+----
+
+- 2019/08/12 (Version 2.2.7)
+* Added BGM files for Touhou 17
+
+----
+
+- 2018/08/11 (Version 2.2.6)
+* Added BGM files for Touhou 15.5 (tagging only) and Touhou 16.5
+
+----
+
+- 2017/08/11 (Version 2.2.5)
+* Added BGM files for Touhou 16
+
+----
+
 - 2017/06/04 (Version 2.2.4)
 * Fix bug with Tasofro extraction not ignoring the Remove Opening Silence option.
 
