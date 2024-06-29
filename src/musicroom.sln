@@ -1,14 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual C++ Express 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bgmlib", "..\libs\bgmlib\bgmlib.vcproj", "{6BDD7362-A003-4E3F-954B-7FF2ABFA27C2}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.34930.48
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bgmlib", "..\libs\bgmlib\bgmlib.vcxproj", "{6BDD7362-A003-4E3F-954B-7FF2ABFA27C2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "th_tool_shared", "..\libs\th_tool_shared\th_tool_shared.vcproj", "{08774117-991B-43E8-8718-4682F0A50F1B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "th_tool_shared", "..\libs\th_tool_shared\th_tool_shared.vcxproj", "{08774117-991B-43E8-8718-4682F0A50F1B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "musicroom", "musicroom.vcxproj", "{0A7B84C6-8214-4210-8C19-028CFDF2EBB0}"
 	ProjectSection(ProjectDependencies) = postProject
+		{08774117-991B-43E8-8718-4682F0A50F1B} = {08774117-991B-43E8-8718-4682F0A50F1B}
 		{6BDD7362-A003-4E3F-954B-7FF2ABFA27C2} = {6BDD7362-A003-4E3F-954B-7FF2ABFA27C2}
 	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "musicroom", "musicroom.vcproj", "{0A7B84C6-8214-4210-8C19-028CFDF2EBB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,5 +34,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2356144-30AB-49A9-8743-E96054AF2298}
 	EndGlobalSection
 EndGlobal

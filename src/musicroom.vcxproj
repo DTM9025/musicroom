@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0A7B84C6-8214-4210-8C19-028CFDF2EBB0}</ProjectGuid>
+    <RootNamespace>musicroom</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.28307.799</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)..\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\..\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\;%(AdditionalIncludeDirectories);$(SolutionDir)..\libs\;$(SolutionDir)..\libs\bgmlib\libs\fox\include\;$(SolutionDir)..\libs\bgmlib\libs\ogg\include\;$(SolutionDir)..\libs\bgmlib\libs\vorbis\include\;$(SolutionDir)..\libs\curl\include\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;_CRT_SECURE_NO_WARNINGS;PROFILING_LIBS;SUPPORT_VORBIS_PM;FLOAT_MATH_FUNCTIONS;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>th_tool_shared_d.lib;bgmlib_thvorbis_d.lib;fox_d.lib;libcurl_a_debug.lib;libvorbisfile_d.lib;libogg_d.lib;libvorbis_d.lib;msimg32.lib;imm32.lib;dsound.lib;wldap32.lib;winmm.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+      <OutputFile>$(OutDir)$(ProjectName)D.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\;%(AdditionalLibraryDirectories);$(SolutionDir)..\libs\</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences />
+      <EnableCOMDATFolding />
+      <LinkTimeCodeGeneration />
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\;%(AdditionalIncludeDirectories);$(SolutionDir)..\libs\;$(SolutionDir)..\libs\bgmlib\libs\fox\include\;$(SolutionDir)..\libs\bgmlib\libs\ogg\include\;$(SolutionDir)..\libs\bgmlib\libs\vorbis\include\;$(SolutionDir)..\libs\curl\include\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;_CRT_SECURE_NO_WARNINGS;CURL_STATICLIB;SUPPORT_VORBIS_PM;FLOAT_MATH_FUNCTIONS;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>th_tool_shared.lib;bgmlib_thvorbis.lib;fox.lib;libcurl_a.lib;libvorbisfile_static.lib;libogg.lib;libvorbis.lib;msimg32.lib;imm32.lib;ws2_32.lib;wldap32.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <Version />
+      <AdditionalLibraryDirectories>..\..\;%(AdditionalLibraryDirectories);$(SolutionDir)..\libs\</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="encode.h" />
+    <ClInclude Include="enc_base.h" />
+    <ClInclude Include="enc_custom.h" />
+    <ClInclude Include="enc_vorbis.h" />
+    <ClInclude Include="extract.h" />
+    <ClInclude Include="mainwnd.h" />
+    <ClInclude Include="musicroom.h" />
+    <ClInclude Include="parse.h" />
+    <ClInclude Include="pm.h" />
+    <ClInclude Include="scan.h" />
+    <ClInclude Include="stream.h" />
+    <ClInclude Include="tagger.h" />
+    <ClInclude Include="tag_base.h" />
+    <ClInclude Include="tag_id3v2.h" />
+    <ClInclude Include="tag_vorbis.h" />
+    <ClInclude Include="widgets.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Akyu.cpp" />
+    <ClCompile Include="encode.cpp" />
+    <ClCompile Include="enc_custom.cpp" />
+    <ClCompile Include="enc_vorbis.cpp" />
+    <ClCompile Include="extract.cpp" />
+    <ClCompile Include="mainwnd.cpp" />
+    <ClCompile Include="musicroom.cpp" />
+    <ClCompile Include="parse.cpp" />
+    <ClCompile Include="pm_pbg6.cpp" />
+    <ClCompile Include="scan.cpp" />
+    <ClCompile Include="stream.cpp" />
+    <ClCompile Include="tagger.cpp" />
+    <ClCompile Include="tag_base.cpp" />
+    <ClCompile Include="tag_id3v2.cpp" />
+    <ClCompile Include="tag_vorbis.cpp" />
+    <ClCompile Include="widgets.cpp" />
+    <ClCompile Include="wikiupdate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Akyu.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="musicroom.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

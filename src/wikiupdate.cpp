@@ -399,7 +399,7 @@ DL:
 
 	// Prepare buffer
 	// --------------
-	if((s = Page.find("<text xml:", s)) == -1)
+	if((s = Page.find("<text ", s)) == -1)
 	{
 		BGMLib::UI_Stat("\nWiki data is corrupted, update not possible!");
 		return Update_Finish(C);
