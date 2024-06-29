@@ -4,7 +4,7 @@
 	shallow = true
 [submodule "libs/bgmlib"]
 	path = libs/bgmlib
-	url = https://github.com/nmlgc/bgmlib
+	url = https://github.com/DTM9025/bgmlib
 [submodule "libs/th_tool_shared"]
 	path = libs/th_tool_shared
 	url = https://github.com/DTM9025/th_tool_shared
