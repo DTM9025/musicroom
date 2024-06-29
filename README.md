@@ -1,4 +1,16 @@
-# Preservation notes
+# Touhou Music Room
+
+The Touhou Music Room is program for playing, extracting, and tagging the music from the Touhou games. It currently supports all official games with the exception of TH13.5, TH14.5, TH15.5, and TH17.5. However, it still supports tagging music from those games if you have extracted them elsewhere.
+
+The music can be encoded into multiple formats (Ogg Vorbis native, FLAC and MP3 via bundled external encoders), while adding correct tags and comments in either Japanese or English. Translations are automatically downloaded and updated from the [Touhou Wiki](http://en.touhouwiki.net). You can mass update tags to your music files with this tool as well.
+
+You can customize the loop count, fade duration and automatic filenaming.
+
+It also can be used as a masstagger for the PC-98 soundtracks from Akyu's Untouched Score and every single one of ZUN's music CDs.
+
+Any future mainline games can be extracted with this tool by providing an appropriate bgm file in the `bgminfo` folder. To generate a bgm file for a mainline game, simply invoke the provided `valuespit_thXX.exe` with the `thbgm.fmt` file extracted from the game and edit the generated file as per the template in the `bgminfo` folder.
+
+## Building Prerequisites
 
 [`src/`](src/) corresponds to the source archive, [`dist/`](dist/) to the binary
 archive. [`libs/`](libs/) contains all used libraries as Git submodules, at the
@@ -6,8 +18,6 @@ versions that were originally linked.
 
 The .bgm files and the `valuespit` tool are part of the [bgmlib
 repository](libs/bgmlib/).
-
-## Prerequisites
 
 * Clone the repo. It is suggested you do a recursive clone as follows:
 

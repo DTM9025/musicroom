@@ -37,8 +37,8 @@ Especially now.
 The newest version of this program, as well as the source code,
 can be downloaded from the following links:
 
-- http://bit.ly/musicroom_interface
-- http://dl.dropbox.com/u/13801415/Touhou/musicroom.htm
+- https://github.com/DTM9025/musicroom/releases/latest
+- https://github.com/DTM9025/musicroom
 
 Please only share either one of those links and not the direct link to the current version archive.
 
