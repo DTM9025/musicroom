@@ -25,11 +25,11 @@ repository](libs/bgmlib/).
 * It is also recommended to target the same Windows SDK Version and the same
   Platform Toolset for each project for consistency whenever it asks.
 
-### Building a Release with VS Community 2017 or Later
+## Building a Release with VS Community 2017 or Later
 
 These instructions assumes you have installed VS Community with the `Desktop development with C++` workload (or related options). Development personally is using Visual Studio Community 2017, but I think later version should still work.
 
-#### Building and Placing the Needed Libraries
+### Building and Placing the Needed Libraries
 
 **NOTE:** Make sure to consistently set the same *C/C++ → Code Generation → Runtime Library* option in all projects being built, because not all of them will come with the same by default. I would suggest MultiThreadedDLL for Release builds and MultiThreadedDebugDLL for Debug builds.
 
@@ -61,7 +61,7 @@ These instructions assumes you have installed VS Community with the `Desktop dev
 
 * Navigate to the `../builds/libcurl-vc-x86-release-static-ipv6-sspi-winssl/lib` directory and copy `libcurl_a.lib` to the `libs/` folder in the repo root.
 
-#### Building Touhou Music Room for Release
+### Building Touhou Music Room for Release
 
 **NOTE:** Like above, be sure to have the same  *C/C++ → Code Generation → Runtime
   Library* option for all projects in the solution as the ones you used for the libraries.
