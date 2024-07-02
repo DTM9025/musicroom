@@ -44,13 +44,13 @@ This only needs to be done once (unless you are modifying the libraries which sh
 
 **NOTE:** VS Community may ask you to retarget the Windows SDK/Platform Toolset upon open opening a project or solution. If they do, be sure to check all the projects and make the Windows SDK Version and Platform Toolset the same for all projects and solutions. If it doesn't and you are getting build errors, try manually retargeting the project by right clicking the project in the Solution Explorer and select Retarget Project.
 
-* Open `libs/bgmlib/libs/ogg/win32/VS2010/libogg_dynamic.sln` with VS Community, change Debug to Release in the dropdown menu, and then build the `libogg` project by right clicking `libogg` in the Solution Explorer and selecting *Build*.
+* Open `libs/bgmlib/libs/ogg/win32/VS2010/libogg_dynamic.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libogg` project by right clicking `libogg` in the Solution Explorer and selecting *Build*.
 
 * Navigate into the resulting `Win32/Release` directory and copy `libogg.lib` and `libogg.dll` to the `libs/` folder in the repo root.
 
-* Open `libs/bgmlib/libs/vorbis/win32/VS2010/vorbis_dynamic.sln` with VS Community, change Debug to Release in the dropdown menu, and then build the `libvorbis` project by right clicking `libvorbis` in the Solution Explorer and selecting *Build*.
+* Open `libs/bgmlib/libs/vorbis/win32/VS2010/vorbis_dynamic.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libvorbis` project by right clicking `libvorbis` in the Solution Explorer and selecting *Build*.
 
-* Open `libs/bgmlib/libs/vorbis/win32/VS2010/vorbis_static.sln` with VS Community, change Debug to Release in the dropdown menu, and then build the `libvorbisfile` project by right clicking `libvorbisfile` in the Solution Explorer and selection *Build*.
+* Open `libs/bgmlib/libs/vorbis/win32/VS2010/vorbis_static.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libvorbisfile` project by right clicking `libvorbisfile` in the Solution Explorer and selection *Build*.
 
 * Navigate into the resulting `Win32/Release` directory and copy `libvorbis.lib`, `libvorbis.dll`, and `libvorbisfile_static.lib` to the `libs/` folder in the repo root.
 
