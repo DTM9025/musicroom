@@ -2,7 +2,7 @@
 // --------------------
 // extract.cpp - Extraction and encoding functions
 // --------------------
-// "©" Nmlgc, 2010-2011
+// "ï¿½" Nmlgc, 2010-2011
 
 #include "musicroom.h"
 
@@ -440,7 +440,8 @@ int Extractor::run()
 
 		V.DisplayFN = PatternFN(&CurTrack->Data);
 		OutFN = OutPath + V.DisplayFN;
-		
+		OutFN = OutFN.substitute("\"", "'"); //Replace double quotes which can't be part of filenames.
+
 		if(FXStat::exists(OutFN))
 		{
 			if(Ret != MBOX_CLICKED_YESALL && Ret != MBOX_CLICKED_NOALL)
