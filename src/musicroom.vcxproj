@@ -71,7 +71,7 @@
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
     <Link>
-      <AdditionalDependencies>th_tool_shared_d.lib;bgmlib_thvorbis_d.lib;fox_d.lib;libcurl_a_debug.lib;libvorbisfile_d.lib;libogg_d.lib;libvorbis_d.lib;msimg32.lib;imm32.lib;dsound.lib;wldap32.lib;winmm.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>th_tool_shared_d.lib;bgmlib_thvorbis_d.lib;fox_d.lib;libcurl_a_debug.lib;libvorbisfile_d.lib;libogg_d.lib;libvorbis_d.lib;miracl_d.lib;msimg32.lib;imm32.lib;dsound.lib;wldap32.lib;winmm.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
       <OutputFile>$(OutDir)$(ProjectName)D.exe</OutputFile>
       <AdditionalLibraryDirectories>..\..\;%(AdditionalLibraryDirectories);$(SolutionDir)..\libs\</AdditionalLibraryDirectories>
@@ -108,7 +108,7 @@
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
     <Link>
-      <AdditionalDependencies>th_tool_shared.lib;bgmlib_thvorbis.lib;fox.lib;libcurl_a.lib;libvorbisfile_static.lib;libogg.lib;libvorbis.lib;msimg32.lib;imm32.lib;ws2_32.lib;wldap32.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>th_tool_shared.lib;bgmlib_thvorbis.lib;fox.lib;libcurl_a.lib;libvorbisfile_static.lib;libogg.lib;libvorbis.lib;miracl.lib;msimg32.lib;imm32.lib;ws2_32.lib;wldap32.lib;dsound.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <Version />
       <AdditionalLibraryDirectories>..\..\;%(AdditionalLibraryDirectories);$(SolutionDir)..\libs\</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>

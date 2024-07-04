@@ -1,6 +1,8 @@
 # Touhou Music Room
 
-The Touhou Music Room is program for playing, extracting, and tagging the music from the Touhou games. It currently supports all official games with the exception of TH13.5, TH14.5, TH15.5, and TH17.5. However, it still supports tagging music from those games if you have extracted them elsewhere.
+The Touhou Music Room is program for playing, extracting, and tagging the music from the Touhou games. It currently supports all official games* with the exception of TH14.5, TH15.5, and TH17.5. However, it still supports tagging music from those games if you have extracted them elsewhere.
+
+*Note that support for TH13.5 is currently a prototype and may need some optimizations.
 
 The music can be encoded into multiple formats (Ogg Vorbis native, FLAC and MP3 via bundled external encoders), while adding correct tags and comments in either Japanese or English. Translations are automatically downloaded and updated from the [Touhou Wiki](http://en.touhouwiki.net). You can mass update tags to your music files with this tool as well.
 
@@ -44,21 +46,27 @@ This only needs to be done once (unless you are modifying the libraries which sh
 
 **NOTE:** VS Community may ask you to retarget the Windows SDK/Platform Toolset upon open opening a project or solution. If they do, be sure to check all the projects and make the Windows SDK Version and Platform Toolset the same for all projects and solutions. If it doesn't and you are getting build errors, try manually retargeting the project by right clicking the project in the Solution Explorer and select Retarget Project.
 
+**NOTE:** Make sure to build the 32 bit Release versions of the libraries. The instructions should ensure that you do that, but be mindful when doing the builds that Release is selected in the dropdown menu and that either Win32 or x86 is selected in the other dropdown menu. 
+
 * Open `libs/bgmlib/libs/ogg/win32/VS2010/libogg_dynamic.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libogg` project by right clicking `libogg` in the Solution Explorer and selecting *Build*.
 
 * Navigate into the resulting `Win32/Release` directory and copy `libogg.lib` and `libogg.dll` to the `libs/` folder in the repo root.
 
 * Open `libs/bgmlib/libs/vorbis/win32/VS2010/vorbis_dynamic.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libvorbis` project by right clicking `libvorbis` in the Solution Explorer and selecting *Build*.
 
-* Open `libs/bgmlib/libs/vorbis/win32/VS2010/vorbis_static.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libvorbisfile` project by right clicking `libvorbisfile` in the Solution Explorer and selection *Build*.
+* Open `libs/bgmlib/libs/vorbis/win32/VS2010/vorbis_static.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libvorbisfile` project by right clicking `libvorbisfile` in the Solution Explorer and selecting *Build*.
 
 * Navigate into the resulting `Win32/Release` directory and copy `libvorbis.lib`, `libvorbis.dll`, and `libvorbisfile_static.lib` to the `libs/` folder in the repo root.
 
 * Open `libs/bgmlib/libs/fox/windows/vcpp/reswrap/reswrap.vcxproj` with VS Community, change Debug to Release in the dropdown menu, and then build the `reswrap` project by right clicking `reswrap` in the Solution Explorer and selection *Build*.
 
-* Open `libs/bgmlib/libs/fox/windows/vcpp/fox/fox.vcxproj` with VS Community, change Debug to Release in the dropdown menu, and then build the `fox` project by right clicking `fox` in the Solution Explorer and selection *Build*.
+* Open `libs/bgmlib/libs/fox/windows/vcpp/fox/fox.vcxproj` with VS Community, change Debug to Release in the dropdown menu, and then build the `fox` project by right clicking `fox` in the Solution Explorer and selecting *Build*.
 
 * Navigate into the resulting `Release` directory and copy `fox.lib` to the `libs/` folder in the repo root.
+
+* Open `libs/bgmlib/libs/MIRACL/miracl.vcxproj` with VS Community, change Debug to Release and x64 to x86 in the dropdown menus, and then build the `miracl` project by right clicking `miracl` in the Solution Explorer and selecting *Build*.
+
+* Navigate into the resulting `Release` directory and copy `miracl.lib` to the `libs/` folder in the repo root.
 
 * Open the Developer Command Prompt for VS2017 (substituting in your own VS version). This should be installed with VS Community. You can search for it in the Start Menu.
 

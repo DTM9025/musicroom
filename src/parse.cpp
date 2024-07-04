@@ -2,7 +2,7 @@
 // --------------------
 // parse.cpp - Main config file parsing and filename patterns
 // --------------------
-// "©" Nmlgc, 2010-2011
+// "ï¿½" Nmlgc, 2010-2011
 
 #include "musicroom.h"
 #include <bgmlib/config.h>
@@ -200,4 +200,5 @@ void SetupPM()
 	PM_BMWav::Inst();
 	PM_BMOgg::Inst();
 	PM_PBG6::Inst();
+	PM_TFPK::Inst();
 }
