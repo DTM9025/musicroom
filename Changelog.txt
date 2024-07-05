@@ -7,6 +7,12 @@ Changelog
 NOTE: This file only lists changes to the user interface program.
       Refer to the bgmlib changelog for changes to supported games and the back-end engine.
 
+
+- 2024/07/05 (Version 2.3.0)
+* Added preliminary support for TH13.5, TH14.5, and TH15.5 and changed the included BGM files to fit.
+* Properly handle output filenames containing double quotes by replacing them with single quotes.
+
+
 - 2024/06/28 (Version 2.2.9)
 * Corrected wiki page retrieval that became broken due to changes in the <text> element of the Export.
 * Added BGM files for TH18, TH18.5, TH19, MCD9.5, and MCD10
@@ -123,9 +129,6 @@ Technical:
 * Extraction and tag update processes run in extra threads now, and you can stop those any time
 * Countless GUI improvements and smaller bugs fixed
 * We have an official link now, yay~
-
-- 2010/09/15
-* Fixed a number of GUI inconveniences. The extraction processes now don't deadlock the GUI anymore.
 
 - 2010/08/16
 * Fixed an oversight with the silence removal, which was checked byte- instead of sample-wise (yes, embarrassing, I know).
