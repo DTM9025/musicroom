@@ -104,7 +104,7 @@ int main(int argc, char* argv[])
 	LGD = LocalGameDir.CheckSection("gamedirs");
 	// -----------------
 
-	FXApp App(PrgName, "Nmlgc");
+	FXApp App(PrgName, "DTM9025");
 	App.init(argc, argv);
 
 	PrgName += " " + PrgVer;

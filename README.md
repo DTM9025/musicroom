@@ -10,7 +10,15 @@ It also can be used as a masstagger for the PC-98 soundtracks from Akyu's Untouc
 
 Any future mainline games can be extracted with this tool by providing an appropriate bgm file in the `bgminfo` folder. To generate a bgm file for a mainline game, simply invoke the provided `valuespit_thXX.exe` with the `thbgm.fmt` file extracted from the game and edit the generated file as per the template in the `bgminfo` folder.
 
-## Building Prerequisites
+## Installation
+
+Simply navigate to the [Release page on GitHub](https://github.com/DTM9025/musicroom/releases) and download the latest ZIP package (should be something like Touhou.Music.Room.X.Y.Z.zip). Then extract it to any directory and run `musicroom.exe` in the folder and you should be good to go!
+
+## Building a Release with VS Community 2017 or Later
+
+**NOTE:** If you just want to use the program, you don't need to do this or go down any further, just install it with the instructions above. Below is only for development purposes.
+
+### Building Prerequisites
 
 [`src/`](src/) corresponds to the source archive, [`dist/`](dist/) to the binary
 archive. [`libs/`](libs/) contains all used libraries as Git submodules, at the
@@ -33,8 +41,6 @@ repository](libs/bgmlib/).
   ```
 
 * Building assumes you have installed Visual Studio Community with the `Desktop development with C++` workload (or related options). Development personally is using Visual Studio Community 2017, but I think later versions should still work. For posterity, I am targeting the 10.0.22621.0 version of the Windows SDK with v141 of the Platform Toolset.
-
-## Building a Release with VS Community 2017 or Later
 
 ### Building and Placing the Needed Libraries
 
