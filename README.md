@@ -1,8 +1,6 @@
 # Touhou Music Room
 
-The Touhou Music Room is program for playing, extracting, and tagging the music from the Touhou games. It currently supports all official games* with the exception of TH14.5, TH15.5, and TH17.5. However, it still supports tagging music from those games if you have extracted them elsewhere.
-
-*Note that support for TH13.5 is currently a prototype and may need some optimizations.
+The Touhou Music Room is program for playing, extracting, and tagging the music from the Touhou games. It currently supports all official games released on Windows.
 
 The music can be encoded into multiple formats (Ogg Vorbis native, FLAC and MP3 via bundled external encoders), while adding correct tags and comments in either Japanese or English. Translations are automatically downloaded and updated from the [Touhou Wiki](http://en.touhouwiki.net). You can mass update tags to your music files with this tool as well.
 
