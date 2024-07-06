@@ -10,6 +10,8 @@ It also can be used as a masstagger for the PC-98 soundtracks from Akyu's Untouc
 
 Any future mainline games can be extracted with this tool by providing an appropriate bgm file in the `bgminfo` folder. To generate a bgm file for a mainline game, simply invoke the provided `valuespit_thXX.exe` with the `thbgm.fmt` file extracted from the game and edit the generated file as per the template in the `bgminfo` folder.
 
+This program was originally created and developed by [Nmlgc](https://github.com/nmlgc). Development is now being done by [DTM](https://github.com/DTM9025)
+
 ## Installation
 
 Simply navigate to the [Release page on GitHub](https://github.com/DTM9025/musicroom/releases) and download the latest ZIP package (should be something like `Touhou.Music.Room.X.Y.Z.zip`). Then extract it to any directory and run `musicroom.exe` in the `Touhou Music Room` folder and you should be good to go!
