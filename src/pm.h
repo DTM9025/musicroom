@@ -15,6 +15,7 @@
 #define BMOGG   0x4	// Vorbis files and SFL loop info in a single archive with header (other Tasofro games)
 #define PBG6    0x5	// Vorbis files and SLI loop info in a single PBG6 encrypted archive (Banshiryuu)
 #define BMPAK   0x6	// Vorbis files and SFL loop info in .pak files with header (th135 - th155)
+#define BMCGA   0x7 // Vorbis files and INI loop info in .cga/b files with footer (th175)
 
 // Encryptions
 // -----------
@@ -33,6 +34,9 @@
 #define CR_KOKORO   0x4 // RSA Encrypted
 #define CR_SUMIREKO 0x5 // RSA Encrypted
 
+// Tasofro TH17.5
+#define CR_YUUMA  0x6 // CGA Encryption
+
 // PAK Versions
 // -----------
 #define PV_KOKORO   0x0
@@ -41,6 +45,7 @@
 #include <bgmlib/pm_zun.h>
 #include <bgmlib/pm_tasofro.h>
 #include <bgmlib/pm_tfpk.h>
+#include <bgmlib/pm_tfcga.h>
 
 // PM_PBG6
 // -------

@@ -201,4 +201,5 @@ void SetupPM()
 	PM_BMOgg::Inst();
 	PM_PBG6::Inst();
 	PM_TFPK::Inst();
+	PM_TFCGA::Inst();
 }
