@@ -12,7 +12,7 @@ Any future mainline games can be extracted with this tool by providing an approp
 
 ## Installation
 
-Simply navigate to the [Release page on GitHub](https://github.com/DTM9025/musicroom/releases) and download the latest ZIP package (should be something like `Touhou.Music.Room.X.Y.Z.zip`). Then extract it to any directory and run `musicroom.exe` in the folder and you should be good to go!
+Simply navigate to the [Release page on GitHub](https://github.com/DTM9025/musicroom/releases) and download the latest ZIP package (should be something like `Touhou.Music.Room.X.Y.Z.zip`). Then extract it to any directory and run `musicroom.exe` in the `Touhou Music Room folder` and you should be good to go!
 
 ## Building a Release with VS Community 2017 or Later
 
