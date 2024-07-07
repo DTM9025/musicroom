@@ -47,7 +47,7 @@ repository](libs/bgmlib/).
 
 This only needs to be done once (unless you are modifying the libraries which should be very unlikely). As soon as the libraries are built and placed in the correct places, you shouldn't need to touch them again.
 
-If you don't care about building these libraries from source, you can just download my prebuilt libraries [here](). Simply extract its contents into the `libs/` folder and move on to the **Building Touhou Music Room for Release** section. Note that these are 32-bit Release builds so be sure you build the same for that section.
+If you don't care about building these libraries from source, you can just download my prebuilt libraries [here](https://github.com/DTM9025/musicroom/releases/download/start/prebuilt_libs.zip). Simply extract its contents into the `libs/` folder and move on to the **Building Touhou Music Room for Release** section. Note that these are 32-bit Release builds so be sure you build the same for that section.
 
 **NOTE:** Make sure to consistently set the same *C/C++ → Code Generation → Runtime Library* option in all projects being built, because not all of them will come with the same by default. I would suggest MultiThreadedDLL for Release builds and MultiThreadedDebugDLL for Debug builds.
 
