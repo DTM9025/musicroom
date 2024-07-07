@@ -10,7 +10,7 @@ It also can be used as a masstagger for the PC-98 soundtracks from Akyu's Untouc
 
 Any future mainline games can be extracted with this tool by providing an appropriate bgm file in the `bgminfo` folder. To generate a bgm file for a mainline game, simply invoke the provided `valuespit_thXX.exe` with the `thbgm.fmt` file extracted from the game and edit the generated file as per the template in the `bgminfo` folder.
 
-This program was originally created and developed by [Nmlgc](https://github.com/nmlgc). Development is now being done by [DTM](https://github.com/DTM9025)
+This program was originally created and developed by [Nmlgc](https://github.com/nmlgc). Development is now being done by [DTM](https://github.com/DTM9025).
 
 ## Installation
 
@@ -22,9 +22,7 @@ Simply navigate to the [Release page on GitHub](https://github.com/DTM9025/music
 
 ### Building Prerequisites
 
-[`src/`](src/) corresponds to the source archive, [`dist/`](dist/) to the binary
-archive. [`libs/`](libs/) contains all used libraries as Git submodules, at the
-versions that were originally linked.
+[`src/`](src/) corresponds to the source archive, [`dist/`](dist/) to the binary archive. [`libs/`](libs/) contains all used libraries as Git submodules, at the versions that were originally linked.
 
 The .bgm files and the `valuespit` tool are part of the [bgmlib
 repository](libs/bgmlib/).
@@ -38,15 +36,18 @@ repository](libs/bgmlib/).
 * Make sure you got all submodules:
 
   ```
-  $ git submodule init
-  $ git submodule update
+  $ git submodule update --init --recursive
   ```
 
 * Building assumes you have installed Visual Studio Community with the `Desktop development with C++` workload (or related options). Development personally is using Visual Studio Community 2017, but I think later versions should still work. For posterity, I am targeting the 10.0.22621.0 version of the Windows SDK with v141 of the Platform Toolset.
 
+* In addition, building the `curl-impersonate-win` library requires MSYS2 and associated packages to be installed. See instructions below on building curl for details.
+
 ### Building and Placing the Needed Libraries
 
 This only needs to be done once (unless you are modifying the libraries which should be very unlikely). As soon as the libraries are built and placed in the correct places, you shouldn't need to touch them again.
+
+If you don't care about building these libraries from source, you can just download my prebuilt libraries [here](). Simply extract its contents into the `libs/` folder and move on to the **Building Touhou Music Room for Release** section. Note that these are 32-bit Release builds so be sure you build the same for that section.
 
 **NOTE:** Make sure to consistently set the same *C/C++ → Code Generation → Runtime Library* option in all projects being built, because not all of them will come with the same by default. I would suggest MultiThreadedDLL for Release builds and MultiThreadedDebugDLL for Debug builds.
 
@@ -56,32 +57,31 @@ This only needs to be done once (unless you are modifying the libraries which sh
 
 * Open `libs/bgmlib/libs/ogg/win32/VS2010/libogg_dynamic.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libogg` project by right clicking `libogg` in the Solution Explorer and selecting *Build*.
 
-* Navigate into the resulting `Win32/Release` directory and copy `libogg.lib` and `libogg.dll` to the `libs/` folder in the repo root.
+* Navigate into the resulting `Win32/Release/` directory and copy `libogg.lib` and `libogg.dll` to the `libs/` folder in the repo root.
 
 * Open `libs/bgmlib/libs/vorbis/win32/VS2010/vorbis_dynamic.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libvorbis` project by right clicking `libvorbis` in the Solution Explorer and selecting *Build*.
 
 * Open `libs/bgmlib/libs/vorbis/win32/VS2010/vorbis_static.sln` with VS Community, change Debug to Release and x64 to Win32 in the dropdown menus, and then build the `libvorbisfile` project by right clicking `libvorbisfile` in the Solution Explorer and selecting *Build*.
 
-* Navigate into the resulting `Win32/Release` directory and copy `libvorbis.lib`, `libvorbis.dll`, and `libvorbisfile_static.lib` to the `libs/` folder in the repo root.
+* Navigate into the resulting `Win32/Release/` directory and copy `libvorbis.lib`, `libvorbis.dll`, and `libvorbisfile_static.lib` to the `libs/` folder in the repo root.
 
 * Open `libs/bgmlib/libs/fox/windows/vcpp/reswrap/reswrap.vcxproj` with VS Community, change Debug to Release in the dropdown menu, and then build the `reswrap` project by right clicking `reswrap` in the Solution Explorer and selection *Build*.
 
 * Open `libs/bgmlib/libs/fox/windows/vcpp/fox/fox.vcxproj` with VS Community, change Debug to Release in the dropdown menu, and then build the `fox` project by right clicking `fox` in the Solution Explorer and selecting *Build*.
 
-* Navigate into the resulting `Release` directory and copy `fox.lib` to the `libs/` folder in the repo root.
+* Navigate into the resulting `Release/` directory and copy `fox.lib` to the `libs/` folder in the repo root.
 
 * Open `libs/bgmlib/libs/MIRACL/miracl.vcxproj` with VS Community, change Debug to Release and x64 to x86 in the dropdown menus, and then build the `miracl` project by right clicking `miracl` in the Solution Explorer and selecting *Build*.
 
-* Navigate into the resulting `Release` directory and copy `miracl.lib` to the `libs/` folder in the repo root.
+* Navigate into the resulting `Release/` directory and copy `miracl.lib` to the `libs/` folder in the repo root.
 
-* Go to `libs/curl-impersonate-win` and follow the instructions in the [README](https://github.com/DTM9025/curl-impersonate-win#curl-impersonate-win) to build, specifically the sections **Environment** and **Build** (you can obviously skip the step on cloning the repo recursively). Note that this is the only part of the build that requires something other than VS Community, specifically it requires MSYS2. The README should have instructions on how to set it up.
+* Go to `libs/curl-impersonate-win/` and follow the instructions in the [README](https://github.com/DTM9025/curl-impersonate-win#curl-impersonate-win) to build, specifically the sections **Environment** and **Build** (you can obviously skip the step on cloning the repo recursively). Note that this is the only part of the build that requires something other than VS Community, specifically it requires MSYS2. The README should have instructions on how to set it up.
 
-* Navigate to the resulting `curl/bin` directory and copy `libcurl.dll` and `libcurl.dll.a` to the `libs/` folder in the repo root.
+* Navigate to the resulting `curl/bin/` directory and copy `libcurl.dll` and `libcurl.dll.a` to the `libs/` folder in the repo root.
 
 ### Building Touhou Music Room for Release
 
-**NOTE:** Like above, be sure to have the same  *C/C++ → Code Generation → Runtime
-  Library* option for all projects in the solution as the ones you used for the libraries.
+**NOTE:** Like above, be sure to have the same  *C/C++ → Code Generation → Runtime Library* option for all projects in the solution as the ones you used for the libraries.
 
 **NOTE:** Be sure to target the same Windows SDK and Platform Toolset as before.
 
@@ -91,10 +91,7 @@ This only needs to be done once (unless you are modifying the libraries which sh
 
 * Build the solution by going to *Build -> Build Solution*. This will first build the `Release THVC` build of `bgmlib`, then the `Release` build of `th_tool_shared`, and finally the `Release` build of `musicroom`. A `musicroom.exe` executable will be generated in the repo root.
 
-* Place `musicroom.exe` into the `dist/` directory, since it absolutely
-  needs `musicroom.cfg` to run. Make sure to also copy the `libvorbis.dll`,
-  `libogg.dll`, and `libcurl.dll` files from `libs/` to the `dist/` directory as well.
-  Also, copy bgmlib's `bgminfo/` subdirectory there.
+* Place `musicroom.exe` into the `dist/` directory, since it absolutely   needs `musicroom.cfg` to run. Make sure to also copy the `libvorbis.dll`, `libogg.dll`, and `libcurl.dll` files from `libs/` to the `dist/` directory as well. Also, copy bgmlib's `bgminfo/` subdirectory there.
 
 * If you also want to have the program be able to output `mp3` and `flac` formats, include the [`lame.exe`](https://lame.sourceforge.io/) and [`flac.exe`](https://xiph.org/flac/) encoders into the `dist/` directory. You can just use the same ones as I do in the releases of Touhou Music Room.
 

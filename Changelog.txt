@@ -7,13 +7,22 @@ Changelog
 NOTE: This file only lists changes to the user interface program.
       Refer to the bgmlib changelog for changes to supported games and the back-end engine.
 
+- 2024/07/07 (Version 2.5.0)
+* Switch from using curl to using curl-impersonate-win to get around Touhou Wiki's CloudFlare
+  preventing BGM files from getting updated. Issues involving wiki data retrieval should be fixed.
+
+----
+
 - 2024/07/06 (Version 2.4.0)
 * Added support for TH17.5 and changed the included BGM files to fit.
+
+----
 
 - 2024/07/05 (Version 2.3.0)
 * Added support for TH13.5, TH14.5, and TH15.5 and changed the included BGM files to fit.
 * Properly handle output filenames containing double quotes by replacing them with single quotes.
 
+----
 
 - 2024/06/28 (Version 2.2.9)
 * Corrected wiki page retrieval that became broken due to changes in the <text> element of the Export.
@@ -104,7 +113,7 @@ Improvements:
 Technical:
 * Split the program into a back-end library (bgmlib) and the front-end GUI part (musicroom)
 * Entirely recoded the tagging engine to get rid of the bloat and some bugs of taglib.
-  Yes, that was a retarded idea, and one week of wasted work, but now it's less ugly (?),
+  Yes, that was a bad idea, and one week of wasted work, but now it's less ugly (?),
   and tailor-made for the needs of the international Touhou community and future i18n plans
 * Many lesser speed increases in other places. Yeah, I played around a bit for no real reason than to show off better profiling times.
 * musicroom.exe now links directly against the native msvcrt.dll. Say goodbye to 1 MB of useless M$ DLLs

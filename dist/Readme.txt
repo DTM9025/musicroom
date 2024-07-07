@@ -30,6 +30,8 @@ Especially now.
 
 * Or at least what I think is correct. If you disagree, please let me know,
   or directly edit the Touhou Wiki.
+
+This program was originally created and developed by Nmlgc. Development is now being done by DTM.
 --------
 
 2. Distribution
@@ -46,10 +48,6 @@ If this gets included in any kind of complete Touhou distribution (e.g. a DVD yo
 or a complete torrent), this tool has achieved its purpose.
 
 As for the source code, well, do with it whatever you like. It's the internet after all.
-
-Oh yeah, and this program was not made by anybody at shrinemaiden.org.
-And especially not by that Drake guy.
-If you downloaded a rehosted version from there, shout at them.
 ---------------
 
 3. Usage
