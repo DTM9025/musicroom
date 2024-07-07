@@ -75,7 +75,7 @@ If you don't care about building these libraries from source, you can just downl
 
 * Navigate into the resulting `Release/` directory and copy `miracl.lib` to the `libs/` folder in the repo root.
 
-* Go to `libs/curl-impersonate-win/` and follow the instructions in the [README](https://github.com/DTM9025/curl-impersonate-win#curl-impersonate-win) to build, specifically the sections **Environment** and **Build** (you can obviously skip the step on cloning the repo recursively). Note that this is the only part of the build that requires something other than VS Community, specifically it requires MSYS2. The README should have instructions on how to set it up.
+* Go to `libs/curl-impersonate-win/` and follow the instructions in the [README](https://github.com/DTM9025/curl-impersonate-win/tree/musicroom#curl-impersonate-win) to build, specifically the sections **Environment** and **Build** (you can obviously skip the step on cloning the repo recursively). Note that this is the only part of the build that requires something other than VS Community, specifically it requires MSYS2. The README should have instructions on how to set it up.
 
 * Navigate to the resulting `curl/bin/` directory and copy `libcurl.dll` and `libcurl.dll.a` to the `libs/` folder in the repo root.
 
