@@ -1,10 +1,9 @@
-[submodule "libs/curl"]
-	path = libs/curl
-	url = https://github.com/curl/curl
-	shallow = true
 [submodule "libs/bgmlib"]
 	path = libs/bgmlib
 	url = https://github.com/DTM9025/bgmlib
 [submodule "libs/th_tool_shared"]
 	path = libs/th_tool_shared
 	url = https://github.com/DTM9025/th_tool_shared
+[submodule "libs/curl-impersonate-win"]
+	path = libs/curl-impersonate-win
+	url = https://github.com/DTM9025/curl-impersonate-win

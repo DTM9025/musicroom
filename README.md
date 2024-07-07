@@ -74,15 +74,9 @@ This only needs to be done once (unless you are modifying the libraries which sh
 
 * Navigate into the resulting `Release` directory and copy `miracl.lib` to the `libs/` folder in the repo root.
 
-* Open the Developer Command Prompt for VS2017 (substituting in your own VS version). This should be installed with VS Community. You can search for it in the Start Menu.
+* Go to `libs/curl-impersonate-win` and follow the instructions in the [README](https://github.com/DTM9025/curl-impersonate-win#curl-impersonate-win) to build, specifically the sections **Environment** and **Build** (you can obviously skip the step on cloning the repo recursively). Note that this is the only part of the build that requires something other than VS Community, specifically it requires MSYS2. The README should have instructions on how to set it up.
 
-* In that command prompt, navigate to `libs/curl/winbuild` and run the following command:
-
-  ```
-  $ nmake /f Makefile.vc mode=static
-  ```
-
-* Navigate to the `../builds/libcurl-vc-x86-release-static-ipv6-sspi-winssl/lib` directory and copy `libcurl_a.lib` to the `libs/` folder in the repo root.
+* Navigate to the resulting `curl/bin` directory and copy `libcurl.dll` and `libcurl.dll.a` to the `libs/` folder in the repo root.
 
 ### Building Touhou Music Room for Release
 
@@ -98,8 +92,8 @@ This only needs to be done once (unless you are modifying the libraries which sh
 * Build the solution by going to *Build -> Build Solution*. This will first build the `Release THVC` build of `bgmlib`, then the `Release` build of `th_tool_shared`, and finally the `Release` build of `musicroom`. A `musicroom.exe` executable will be generated in the repo root.
 
 * Place `musicroom.exe` into the `dist/` directory, since it absolutely
-  needs `musicroom.cfg` to run. Make sure to also copy the `libvorbis.dll` and
-  `libogg.dll` files from `libs/` to the `dist/` directory as well.
+  needs `musicroom.cfg` to run. Make sure to also copy the `libvorbis.dll`,
+  `libogg.dll`, and `libcurl.dll` files from `libs/` to the `dist/` directory as well.
   Also, copy bgmlib's `bgminfo/` subdirectory there.
 
 * If you also want to have the program be able to output `mp3` and `flac` formats, include the [`lame.exe`](https://lame.sourceforge.io/) and [`flac.exe`](https://xiph.org/flac/) encoders into the `dist/` directory. You can just use the same ones as I do in the releases of Touhou Music Room.

@@ -371,6 +371,8 @@ bool Update(GameInfo* GI, FXString& WikiURL)
 
 	C = curl_easy_init();
 
+	curl_easy_impersonate(C, "chrome116", 1);
+	curl_easy_setopt(C, CURLOPT_SSL_VERIFYPEER, FALSE);
 	curl_easy_setopt(C, CURLOPT_FOLLOWLOCATION, 1);
 	curl_easy_setopt(C, CURLOPT_NOPROGRESS, 1);
 	curl_easy_setopt(C, CURLOPT_WRITEFUNCTION, write_data);
