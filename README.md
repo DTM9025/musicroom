@@ -39,15 +39,23 @@ repository](libs/bgmlib/).
   $ git submodule update --init --recursive
   ```
 
-* Building assumes you have installed Visual Studio Community with the `Desktop development with C++` workload (or related options). Development personally is using Visual Studio Community 2017, but I think later versions should still work. For posterity, I am targeting the 10.0.22621.0 version of the Windows SDK with v141 of the Platform Toolset.
+* Building assumes you have installed Visual Studio Community with the `Desktop development with C++` workload (or related options). Development personally is using Visual Studio Community 2017, but I think later versions should still work.
 
-* In addition, building the `curl-impersonate-win` library requires MSYS2 and associated packages to be installed. See instructions below on building curl for details.
+* In addition, building the `curl-impersonate-win` library from source requires MSYS2 and associated packages to be installed. See instructions below on building curl for details.
 
-### Building and Placing the Needed Libraries
+### Getting the Needed Libraries
 
 This only needs to be done once (unless you are modifying the libraries which should be very unlikely). As soon as the libraries are built and placed in the correct places, you shouldn't need to touch them again.
 
-If you don't care about building these libraries from source, you can just download my prebuilt libraries [here](https://github.com/DTM9025/musicroom/releases/download/start/prebuilt_libs.zip). Simply extract its contents into the `libs/` folder and move on to the **Building Touhou Music Room for Release** section. Note that these are 32-bit Release builds so be sure you build the same for that section.
+For this you have two options.  You can either use the prebuilt library binaries provided or you can build them from source yourself. Instructions for both are provided below.
+
+#### Option 1: Using the Prebuilt Libraries
+
+If you don't care about building these libraries from source, you can just download my prebuilt libraries [here](https://github.com/DTM9025/musicroom/releases/download/start/prebuilt_libs.zip). Simply extract its contents into the `libs/` folder and move on to the **Building Touhou Music Room for Release** section.
+
+For posterity, these libraries are built targeting Windows SDK version 10.0.22621.0 with v141 of the Platform Toolset, and using MultiThreadedDLL for the Runtime Library.
+
+#### Option 2: Building the Libraries from Source
 
 **NOTE:** Make sure to consistently set the same *C/C++ → Code Generation → Runtime Library* option in all projects being built, because not all of them will come with the same by default. I would suggest MultiThreadedDLL for Release builds and MultiThreadedDebugDLL for Debug builds.
 
@@ -81,7 +89,7 @@ If you don't care about building these libraries from source, you can just downl
 
 ### Building Touhou Music Room for Release
 
-**NOTE:** Like above, be sure to have the same  *C/C++ → Code Generation → Runtime Library* option for all projects in the solution as the ones you used for the libraries.
+**NOTE:** Like above, be sure to have the same  *C/C++ → Code Generation → Runtime Library* option for all projects in the solution as the ones you used for the libraries. If you used the prebuilt libraries the defaults should be okay.
 
 **NOTE:** Be sure to target the same Windows SDK and Platform Toolset as before.
 
