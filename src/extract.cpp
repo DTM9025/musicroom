@@ -2,7 +2,8 @@
 // --------------------
 // extract.cpp - Extraction and encoding functions
 // --------------------
-// "�" Nmlgc, 2010-2011
+// "©" Nmlgc, 2010-2011
+// "©" DTM9025, 2024
 
 #include "musicroom.h"
 
@@ -107,7 +108,7 @@ FXint Decrypter::run()
 	VF->Clear();
 	VF->Create(TI->FS);
 
-	Ret = (GI->PM->DecryptFile(GI, In, VF->Buf, TI->GetStart(), VF->Size, &VF->Write) != 0);
+	Ret = (GI->PM->DecryptMusic(GI, In, VF->Buf, TI, &VF->Write) != 0);
 	In.close();
 	detach();
 	return Ret;
