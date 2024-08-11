@@ -47,7 +47,8 @@ Please only share either one of those links and not the direct link to the curre
 If this gets included in any kind of complete Touhou distribution (e.g. a DVD you burn yourself
 or a complete torrent), this tool has achieved its purpose.
 
-As for the source code, well, do with it whatever you like. It's the internet after all.
+This project and its source code is licensed under the GPLv3 or later. The full terms can be found
+in the LICENSE.md file.
 ---------------
 
 3. Usage
