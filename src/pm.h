@@ -3,6 +3,7 @@
 // pm.h - Additional Pack Method subclasses
 // --------------------
 // "©" Nmlgc, 2010-2011
+// "©" DTM9025, 2024
 
 #ifndef MUSICROOM_PM_H
 #define MUSICROOM_PM_H
@@ -64,7 +65,7 @@ protected:
 public:
 	ulong Decrypt(volatile FXulong& d, char* dest, const char* source, const ulong& size);	// Returns source bytes actually read
 	ulong DecryptFile(GameInfo* GI, FXFile& In, char* Out, const ulong& Pos, const ulong& Size, volatile FXulong* p = NULL);
-	ulong DecryptMusic(GameInfo* GI, FXFile& In, char* Out, TrackInfo* TI, volatile FXulong* p = NULL);
+	ulong DecryptTrack(GameInfo* GI, FXFile& In, char* Out, TrackInfo* TI, volatile FXulong* p = NULL);
 
 	bool ParseGameInfo(ConfigFile& NewGame, GameInfo* GI);
 	bool ParseTrackInfo(ConfigFile& NewGame, GameInfo* GI, ConfigParser* TS, TrackInfo* NewTrack);		// return true if position data should be read from config file

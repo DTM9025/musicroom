@@ -1,6 +1,7 @@
 // Music Room Interface
 // --------------------
 // "©" Nmlgc, 2010-2011
+// "©" DTM9025, 2024
 
 #ifndef MUSICROOM_MUSICROOM_H
 #define MUSICROOM_MUSICROOM_H

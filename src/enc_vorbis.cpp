@@ -2,7 +2,8 @@
 // --------------------
 // enc_vorbis.cpp - Built-in Vorbis encoding
 // --------------------
-// "�" Nmlgc, 2011
+// "©" Nmlgc, 2011
+// "©" DTM9025, 2024
 
 #include "musicroom.h"
 #include <bgmlib/ui.h>

@@ -3,6 +3,7 @@
 // mainwnd.cpp - GUI
 // --------------------
 // "©" Nmlgc, 2010-2011
+// "©" DTM9025, 2024
 
 #include "musicroom.h"
 #include <fx.h>

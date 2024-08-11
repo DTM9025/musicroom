@@ -3,6 +3,7 @@
 // musicroom.cpp - Main starting code
 // --------------------
 // "©" Nmlgc, 2010-2011
+// "©" DTM9025, 2024
 
 #include "musicroom.h"
 #include <math.h>

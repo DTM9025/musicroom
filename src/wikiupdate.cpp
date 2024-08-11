@@ -3,6 +3,7 @@
 // wikiupdate.cpp - Touhou Wiki Track Info Updating
 // --------------------
 // "©" Nmlgc, 2010-2011
+// "©" DTM9025, 2024
 
 #include <bgmlib/platform.h>
 

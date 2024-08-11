@@ -3,6 +3,7 @@
 // pm_pbg6.cpp - Parsing for PBG6 archives (Banshiryuu)
 // --------------------
 // "©" Nmlgc, 2011
+// "©" DTM9025, 2024
 
 #include "musicroom.h"
 #include <FXFile.h>
@@ -147,7 +148,7 @@ ulong PM_PBG6::Decrypt(volatile FXulong& d, char* dest, const char* source, cons
 #define THRESHOLD_BYTES 32768
 
 // Maybe later I can better refactor this, but for now this is fine.
-ulong PM_PBG6::DecryptMusic(GameInfo* GI, FXFile& In, char* Out, TrackInfo* TI, volatile FXulong* p)
+ulong PM_PBG6::DecryptTrack(GameInfo* GI, FXFile& In, char* Out, TrackInfo* TI, volatile FXulong* p)
 {
 	return DecryptFile(GI, In, Out, TI->GetStart(), TI->FS, p);
 }

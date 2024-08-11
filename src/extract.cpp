@@ -108,7 +108,7 @@ FXint Decrypter::run()
 	VF->Clear();
 	VF->Create(TI->FS);
 
-	Ret = (GI->PM->DecryptMusic(GI, In, VF->Buf, TI, &VF->Write) != 0);
+	Ret = (GI->PM->DecryptTrack(GI, In, VF->Buf, TI, &VF->Write) != 0);
 	In.close();
 	detach();
 	return Ret;
