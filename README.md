@@ -107,7 +107,7 @@ For posterity, these libraries are built targeting Windows SDK version 10.0.2262
 
 ## License
 
-In summary, unless stated otherwise, Touhou Music Room, its source files, and the libraries bgmlib, th_tool_shared, and their source files, are licensed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+In summary, unless stated otherwise, Touhou Music Room, its source files, and the libraries bgmlib, th_tool_shared, and their source files, are licensed under the terms of the GNU General Public License version 3 as published by the Free Software Foundation.
 
 This project uses various third-party libraries, which have their own licenses, compatible with this project's license.
 

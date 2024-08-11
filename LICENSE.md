@@ -2,9 +2,8 @@
 
 Unless explicitly stated otherwise in the text of the source file, Touhou Music Room
 and the libraries bgmlib and th_tool_shared, and their corresponding source files,
-are licensed under the terms of the GNU General Public License as published by the
-Free Software Foundation, either version 3 of the License, or (at your option) any
-later version.
+are licensed under the terms of the GNU General Public License version 3 as published
+by the Free Software Foundation.
 
 This project was originally developed by [Nmlgc](https://github.com/nmlgc/), who
 released the source code with the following note:
@@ -13,7 +12,7 @@ released the source code with the following note:
 
 Development is now being done by [DTM9025](https://github.com/DTM9025) and the
 project, including bgmlib and th_tool_shared, and their source code, is now
-under the GPLv3 or later.
+under the GPLv3.
 
 ## GNU General Public License v3.0
 ```
