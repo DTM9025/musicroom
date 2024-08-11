@@ -104,3 +104,11 @@ For posterity, these libraries are built targeting Windows SDK version 10.0.2262
 * If you also want to have the program be able to output `mp3` and `flac` formats, include the [`lame.exe`](https://lame.sourceforge.io/) and [`flac.exe`](https://xiph.org/flac/) encoders into the `dist/` directory. You can just use the same ones as I do in the releases of Touhou Music Room.
 
 * ZIP it up and distribute!
+
+## License
+
+In summary, unless stated otherwise, Touhou Music Room, its source files, and the libraries bgmlib, th_tool_shared, and their source files, are licensed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This project uses various third-party libraries, which have their own licenses, compatible with this project's license.
+
+The full license terms are detailed in [`LICENSE.md`](https://github.com/DTM9025/musicroom/blob/master/LICENSE.md)
