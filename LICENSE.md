@@ -2,8 +2,9 @@
 
 Unless explicitly stated otherwise in the text of the source file, Touhou Music Room
 and the libraries bgmlib and th_tool_shared, and their corresponding source files,
-are licensed under the terms of the GNU General Public License version 3 as published
-by the Free Software Foundation.
+are licensed under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your option) any
+later version.
 
 This project was originally developed by [Nmlgc](https://github.com/nmlgc/), who
 released the source code with the following note:
@@ -12,7 +13,7 @@ released the source code with the following note:
 
 Development is now being done by [DTM9025](https://github.com/DTM9025) and the
 project, including bgmlib and th_tool_shared, and their source code, is now
-under the GPLv3.
+under the GPLv3 or later.
 
 ## GNU General Public License v3.0
 ```
@@ -698,7 +699,7 @@ Touhou Music Room and the bgmlib library depends on third-party libraries with c
 
 | Library Name | License | Authors/Notes |
 |-|-|-|
-| [MIRACL](https://github.com/miracl/MIRACL) | [AGPL-3.0-only](#MIRACL) | © 2018 MIRACL UK Ltd. |
+| [MIRACL](https://github.com/miracl/MIRACL) | [AGPL-3.0-or-later](#MIRACL) | © 2018 MIRACL UK Ltd. |
 | [fox-toolkit](http://fox-toolkit.org/) | [LGPL-3.0-or-later](#fox-tookit) | Copyright (C) 1998,2010 by Jeroen van der Zijp | 
 | [ogg](https://github.com/xiph/ogg) | [BSD-3-Clause](#ogg) | Copyright (c) 2002, Xiph.org Foundation |
 | [vorbis](https://github.com/xiph/vorbis) | [BSD-3-Clause](#vorbis) | Copyright (c) 2002-2008 Xiph.org Foundation |
