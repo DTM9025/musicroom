@@ -107,8 +107,12 @@ For posterity, these libraries are built targeting Windows SDK version 10.0.2262
 
 ## License
 
-In summary, unless stated otherwise, Touhou Music Room, its source files, and the libraries bgmlib, th_tool_shared, and their source files, are licensed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+This program was originally developed by [Nmlgc](https://github.com/nmlgc/), who released the source code with the following note:
 
-This project uses various third-party libraries, which have their own licenses, compatible with this project's license.
+    As for the source code, well, do with it whatever you like.
 
-The full license terms are detailed in [`LICENSE.md`](https://github.com/DTM9025/musicroom/blob/master/LICENSE.md)
+Development is now being done by [DTM9025](https://github.com/DTM9025) and the program, including bgmlib and th_tool_shared, are now licensed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program uses various third-party libraries, which have their own licenses. All but one (BoringSSL) are compatible with this program's license. An additional permission is provided to allow the program to link and combine BoringSSL with this program and convey the resulting work.
+
+The full license terms are detailed in [`LICENSE.md`](https://github.com/DTM9025/musicroom/blob/master/LICENSE.md).

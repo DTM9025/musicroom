@@ -1,19 +1,25 @@
 # Touhou Music Room
+Copyright (C) 2024 DTM9025
 
-Unless explicitly stated otherwise in the text of the source file, Touhou Music Room
-and the libraries bgmlib and th_tool_shared, and their corresponding source files,
-are licensed under the terms of the GNU General Public License as published by the
-Free Software Foundation, either version 3 of the License, or (at your option) any
+This program (Touhou Music Room and the libraries bgmlib and th_tool_shared, and their source code) is
+free software; you can redistribute it and/or modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 3 of the License, or (at your option) any
 later version.
 
-This project was originally developed by [Nmlgc](https://github.com/nmlgc/), who
-released the source code with the following note:
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
 
-    As for the source code, well, do with it whatever you like.
+You should have received a copy of the GNU General Public License along with this program; if not, see
+<https://www.gnu.org/licenses>.
 
-Development is now being done by [DTM9025](https://github.com/DTM9025) and the
-project, including bgmlib and th_tool_shared, and their source code, is now
-under the GPLv3 or later.
+Additional permission under GNU GPL version 3 section 7
+
+If you modify this program, or any covered work, by linking or combining it with BoringSSL (or a modified
+version of that library), containing parts covered by the terms of the OpenSSL or SSLeay licenses, the
+licensors of this program grant you additional permission to convey the resulting work. Corresponding Source
+for a non-source form of such a combination shall include the source code for the parts of BoringSSL used as
+well as that of the covered work.
 
 ## GNU General Public License v3.0
 ```
@@ -708,14 +714,17 @@ Touhou Music Room and the bgmlib library depends on third-party libraries with c
 In addition to the third-party libraries above, Touhou Music Room also utilizes a special build of the curl library,
 [curl-impersonate-win](https://github.com/depler/curl-impersonate-win). This project hosts scripts to allow you to
 build a version of curl patched with modifications from [curl-impersonate](https://github.com/lwthiker/curl-impersonate)
-and using the [boringssl](https://boringssl.googlesource.com/boringssl) library. Thus Touhou Music Room also depends on:
+and using the [BoringSSL](https://boringssl.googlesource.com/boringssl) library. Thus Touhou Music Room also depends on:
 
 | Library Name | License | Authors/Notes |
 |-|-|-|
 | [curl](https://github.com/curl/curl) | [curl](#curl) | Copyright (c) 1996 - 2023, Daniel Stenberg, <daniel@haxx.se>, and many contributors |
-| [boringssl](https://boringssl.googlesource.com/boringssl) | [OpenSSL AND ISC](#boringssl) | Copyright (c) 1998-2011 The OpenSSL Project; Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com); Copyright (c) 2015, Google Inc. | 
+| [BoringSSL](https://boringssl.googlesource.com/boringssl) | [OpenSSL AND ISC](#BoringSSL) | Copyright (c) 1998-2011 The OpenSSL Project; Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com); Copyright (c) 2015, Google Inc. | 
 | [curl-impersonate](https://github.com/lwthiker/curl-impersonate) | [MIT](#curl-impersonate) | Copyright (c) 2022 lwthiker |
 
+BoringSSL contains parts covered by the terms of the OpenSSL or SSLeay licenses, which normally is not compatible with the
+GNU GPL version 3. An additional permission is provided as stated above to allow the program to link and combine BoringSSL
+with this program and convey the resulting work.
 
 # Licenses of Third-Party Libraries
 
@@ -1669,7 +1678,7 @@ be used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization of the copyright holder.
 ```
 
-## boringssl
+## BoringSSL
 ```
 BoringSSL is a fork of OpenSSL. As such, large parts of it fall under OpenSSL
 licensing. Files that are completely new have a Google copyright and an ISC
