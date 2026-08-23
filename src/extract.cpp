@@ -4,10 +4,20 @@
 // --------------------
 // "©" Nmlgc, 2010-2011
 // "©" DTM9025, 2024
+// "©" mataha, 2026
 
 #include "musicroom.h"
 
+#ifndef _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
+#endif
 #include <math.h>
+#ifndef M_PI
+#define M_PI (3.14159265358979323846)
+#ifndef _MATH_DEFINES_DEFINED
+#define _MATH_DEFINES_DEFINED
+#endif
+#endif
 
 // FOX
 #include <FXHash.h>
@@ -96,6 +106,21 @@ public:
 	SINGLETON(FadeAlg_Exp);
 };
 
+class FadeAlg_Smooth : public FadeAlg
+{
+public:
+	short*	Eval(short* f, long& c, long& Len)
+	{
+		double Step = (double)c / (double)Len;
+		*f = (double)*f * 0.5 * (1.0 + cos(Step * M_PI));	f++;
+		*f = (double)*f * 0.5 * (1.0 + cos(Step * M_PI));	f++;
+		return f;
+	}
+
+	FadeAlg_Smooth()	{Name = "Smooth (S-curve)";}
+	SINGLETON(FadeAlg_Smooth);
+};
+
 // Decryption thread
 // -----------------
 FXint Decrypter::run()
@@ -137,6 +162,7 @@ Extractor::Extractor()
 {
 	FAs.Add()->Data = &FadeAlg_Linear::Inst();
 	FAs.Add()->Data = &FadeAlg_Exp::Inst();
+	FAs.Add()->Data = &FadeAlg_Smooth::Inst();
 }
 
 Extract_Vals::Extract_Vals()
