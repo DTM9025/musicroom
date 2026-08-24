@@ -8,16 +8,7 @@
 
 #include "musicroom.h"
 
-#ifndef _USE_MATH_DEFINES
-#define _USE_MATH_DEFINES
-#endif
 #include <math.h>
-#ifndef M_PI
-#define M_PI (3.14159265358979323846)
-#ifndef _MATH_DEFINES_DEFINED
-#define _MATH_DEFINES_DEFINED
-#endif
-#endif
 
 // FOX
 #include <FXHash.h>
@@ -120,7 +111,7 @@ public:
 	short*	Eval(short* f, long& c, long& Len)
 	{
 		double Step = (double)c / (double)Len;
-		double Vol = 0.5 * (1.0 + cos(Step * M_PI));
+		double Vol = 0.5 * (1.0 + cos(Step * PI));
 		for(ushort i = 0; i < 2; ++i)
 		{
 			*f = (double)*f * Vol;
