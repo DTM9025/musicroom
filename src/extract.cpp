@@ -82,8 +82,12 @@ public:
 	short*	Eval(short* f, long& c, long& Len)
 	{
 		double Step = (double)c / (double)Len;
-		*f = (double)*f * (1.0 - Step);	f++;
-		*f = (double)*f * (1.0 - Step);	f++;
+		double Vol = 1.0 - Step;
+		for(ushort i = 0; i < 2; ++i)
+		{
+			*f = (double)*f * Vol;
+			f++;
+		}
 		return f;
 	}
 
@@ -97,8 +101,12 @@ public:
 	short*	Eval(short* f, long& c, long& Len)
 	{
 		double Step = (double)c / (double)Len;
-		*f = (double)*f * (-pow(0.05, Step) * (Step - 1.0));	f++;
-		*f = (double)*f * (-pow(0.05, Step) * (Step - 1.0));	f++;
+		double Vol = -pow(0.05, Step) * (Step - 1.0);
+		for(ushort i = 0; i < 2; ++i)
+		{
+			*f = (double)*f * Vol;
+			f++;
+		}
 		return f;
 	}
 
@@ -112,8 +120,12 @@ public:
 	short*	Eval(short* f, long& c, long& Len)
 	{
 		double Step = (double)c / (double)Len;
-		*f = (double)*f * 0.5 * (1.0 + cos(Step * M_PI));	f++;
-		*f = (double)*f * 0.5 * (1.0 + cos(Step * M_PI));	f++;
+		double Vol = 0.5 * (1.0 + cos(Step * M_PI));
+		for(ushort i = 0; i < 2; ++i)
+		{
+			*f = (double)*f * Vol;
+			f++;
+		}
 		return f;
 	}
 
