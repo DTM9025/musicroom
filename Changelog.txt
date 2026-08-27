@@ -7,6 +7,11 @@ Changelog
 NOTE: This file only lists changes to the user interface program.
       Refer to the bgmlib changelog for changes to supported games and the back-end engine.
 
+- 2026/08/26 (Version 2.6.2)
+* Add smooth (S-curve) fade algorithm (thanks mataha for the PR!).
+
+----
+
 - 2024/07/07 (Version 2.5.0)
 * Switch from using curl to using curl-impersonate-win to get around Touhou Wiki's CloudFlare
   preventing BGM files from getting updated. Issues involving wiki data retrieval should be fixed.
