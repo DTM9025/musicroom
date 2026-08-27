@@ -4,6 +4,7 @@
 // --------------------
 // "©" Nmlgc, 2010-2011
 // "©" DTM9025, 2024
+// "©" mataha, 2026
 
 #include "musicroom.h"
 
@@ -72,8 +73,12 @@ public:
 	short*	Eval(short* f, long& c, long& Len)
 	{
 		double Step = (double)c / (double)Len;
-		*f = (double)*f * (1.0 - Step);	f++;
-		*f = (double)*f * (1.0 - Step);	f++;
+		double Vol = 1.0 - Step;
+		for(ushort i = 0; i < 2; ++i)
+		{
+			*f = (double)*f * Vol;
+			f++;
+		}
 		return f;
 	}
 
@@ -87,13 +92,36 @@ public:
 	short*	Eval(short* f, long& c, long& Len)
 	{
 		double Step = (double)c / (double)Len;
-		*f = (double)*f * (-pow(0.05, Step) * (Step - 1.0));	f++;
-		*f = (double)*f * (-pow(0.05, Step) * (Step - 1.0));	f++;
+		double Vol = -pow(0.05, Step) * (Step - 1.0);
+		for(ushort i = 0; i < 2; ++i)
+		{
+			*f = (double)*f * Vol;
+			f++;
+		}
 		return f;
 	}
 
 	FadeAlg_Exp()	{Name = "Exponential";}
 	SINGLETON(FadeAlg_Exp);
+};
+
+class FadeAlg_Smooth : public FadeAlg
+{
+public:
+	short*	Eval(short* f, long& c, long& Len)
+	{
+		double Step = (double)c / (double)Len;
+		double Vol = 0.5 * (1.0 + cos(Step * PI));
+		for(ushort i = 0; i < 2; ++i)
+		{
+			*f = (double)*f * Vol;
+			f++;
+		}
+		return f;
+	}
+
+	FadeAlg_Smooth()	{Name = "Smooth (S-curve)";}
+	SINGLETON(FadeAlg_Smooth);
 };
 
 // Decryption thread
@@ -137,6 +165,7 @@ Extractor::Extractor()
 {
 	FAs.Add()->Data = &FadeAlg_Linear::Inst();
 	FAs.Add()->Data = &FadeAlg_Exp::Inst();
+	FAs.Add()->Data = &FadeAlg_Smooth::Inst();
 }
 
 Extract_Vals::Extract_Vals()
